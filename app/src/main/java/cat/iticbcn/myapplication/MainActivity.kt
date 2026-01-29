@@ -2,7 +2,6 @@ package cat.iticbcn.myapplication
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.GridLayout
 import android.widget.SearchView
 import android.widget.Toast
@@ -48,7 +47,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private fun initUI() {
         //val llBotons = findViewById<LinearLayout>(R.id.llBotons)
 
-        EndPoint.values().forEach { endpoint ->
+        EndPoint.entries.forEach { endpoint ->
             val button = MaterialButton(this).apply {
                 text = endpoint.name.lowercase().replaceFirstChar { it.uppercase() }
                 layoutParams = GridLayout.LayoutParams().apply {
