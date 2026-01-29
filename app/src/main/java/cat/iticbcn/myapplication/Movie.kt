@@ -26,5 +26,5 @@ data class Movie(
     @SerializedName("posterURL")
     val image: String,
     @SerializedName("imdbId")
-    val reference: Double
+    val reference: String
 )

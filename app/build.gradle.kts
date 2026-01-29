@@ -32,7 +32,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
-        compose = true
         viewBinding = true
     }
 }
@@ -47,7 +46,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(libs.picasso)
+    //implementation(libs.picasso)
+    implementation("com.squareup.picasso:picasso:2.8")
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.kotlinx.coroutines.android)
