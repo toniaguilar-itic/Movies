@@ -1,5 +1,6 @@
-package cat.iticbcn.myapplication
+package cat.iticbcn.myapplication.data
 
+import cat.iticbcn.myapplication.Movie
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Url
