@@ -1,27 +1,23 @@
-package cat.iticbcn.myapplication
+package cat.iticbcn.myapplication.ui.main.view
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.GridLayout
 import android.widget.SearchView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import cat.iticbcn.myapplication.domain.entities.EndPoint
+import cat.iticbcn.myapplication.R
 import cat.iticbcn.myapplication.databinding.ActivityMainBinding
+import cat.iticbcn.myapplication.ui.main.viewmodel.MainViewModel
 import com.google.android.material.button.MaterialButton
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
@@ -35,6 +31,12 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //viewModel.onCreate()
+
+        viewModel.isLoading.observe(this, Observer  {
+            binding.pbProgress.isVisible = it
+        })
 
         initRecyclerView()
         initUI()

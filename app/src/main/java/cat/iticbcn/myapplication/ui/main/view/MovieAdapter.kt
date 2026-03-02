@@ -1,9 +1,10 @@
-package cat.iticbcn.myapplication
+package cat.iticbcn.myapplication.ui.main.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import cat.iticbcn.myapplication.databinding.ItemMovieBinding
+import cat.iticbcn.myapplication.R
+import cat.iticbcn.myapplication.data.model.Movie
 
 class MovieAdapter(private var movies: List<Movie>) : RecyclerView.Adapter<MovieViewHolder>() {
 

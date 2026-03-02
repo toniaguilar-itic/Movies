@@ -1,4 +1,4 @@
-package cat.iticbcn.myapplication
+package cat.iticbcn.myapplication.data.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -19,7 +19,6 @@ El json generat per l'API (https://api.sampleapis.com/movies/drama/) a rebre té
   }, [...}
 ]
 */
-
 
 data class Movie(
     val title: String,
